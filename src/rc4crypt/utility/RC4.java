@@ -17,10 +17,12 @@ public class RC4 {
         byte[] temp_key = input_key.getBytes();
         
         //----------------------------MODIFIKASI--------------------------------
-        //Gunakan LFSR untuk men-generate keystream bit acak panjang 
-        //sesuai key dengan periode 15
-        //keystream LFSR akan di-XOR-kan dengan key
+        //Gunakan LFSR untuk men-generate keystream bit acak dengan panjang 
+        //sesuai key dengan periode 15.
+        //keystream LFSR akan di-XOR-kan dengan key.
         //inisialisasi LFSR dengan 4 bit awal adalah 1 0 1 1
+        //sehingga pada array, lfsr[0] merepresentasikan bit ke-4
+        //dan lfsr[3] merepresentasikan bit ke-1 pada register geser
         byte[] lfsr = new byte[4];    
         lfsr[0] = (byte) 1;
         lfsr[1] = (byte) 0;
